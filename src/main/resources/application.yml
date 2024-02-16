@@ -19,5 +19,5 @@ spring.kafka.properties.latest.compatibility.strict: false
 kafka.topic.sku-delta: pc-pim-dev-sku-delta-v1
 
 #Kafka Group Id
-kafka.relationship.group.id: pc-local-eventing-middleware-delta
+kafka.relationship.group.id: pc-local-eventing-middleware-delta-sv
 kafka.listener.concurrency.relationshipconsumer: 4

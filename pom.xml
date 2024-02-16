@@ -135,13 +135,10 @@
                         <configuration>
                             <imports>
                                 <import>src/main/avro//local/common/attribute.avsc</import>
-                                <import>src/main/avro//local/common/record-status.avsc</import>
                                 <import>src/main/avro//local/common/attribute-action.avsc</import>
-                                <import>src/main/avro//local/common/link-action.avsc</import>
-                                <import>src/main/avro//local/syndigopimcopy/pc-pim-syndigo-eventhub-value.avsc</import>
                             </imports>
-                            <sourceDirectory>C:/Users/DKS0721255/Downloads/demo/demo/src/main/avro/</sourceDirectory>
-                            <outputDirectory>C:/Users/DKS0721255/Downloads/demo/demo/src/main/java/</outputDirectory>
+                            <sourceDirectory>/Users/DKS0683762/workspace/DemoConsumer/src/main/avro/</sourceDirectory>
+                            <outputDirectory>/Users/DKS0683762/workspace/DemoConsumer/src/main/java/</outputDirectory>
                             <stringType>CharSequence</stringType>
                         </configuration>
                     </execution>
