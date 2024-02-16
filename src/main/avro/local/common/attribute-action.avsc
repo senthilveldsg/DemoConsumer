@@ -1,0 +1,9 @@
+{
+  "namespace": "com.dcsg.pc.eventing.schema.common",
+  "name": "AttributeAction",
+  "type": "enum",
+  "symbols": [
+    "UPDATE",
+    "DELETE"
+  ]
+}

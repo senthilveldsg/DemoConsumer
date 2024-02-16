@@ -1,0 +1,9 @@
+{
+  "namespace": "com.dcsg.pc.eventing.schema.common",
+  "name": "RecordStatus",
+  "type": "enum",
+  "symbols": [
+    "ACTIVE",
+    "DELETED"
+  ]
+}

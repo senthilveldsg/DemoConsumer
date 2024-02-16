@@ -1,0 +1,19 @@
+spring:
+  config:
+    import: 'vault://'
+  cloud:
+    vault:
+      enabled: true
+      fail-fast: true
+      host: vault.tools.dcsg.com
+      port: 443
+      scheme: https
+      authentication: APPROLE
+      app-role:
+        role-id: ${VAULT_APP_ROLE_ID}
+        secret-id: ${VAULT_APP_ROLE_SECRET_ID}
+      kv:
+        enabled: true
+        backend: concourse/product-catalog/apps/eventing-middleware
+        application-name: eventhub,kafka,sql-pc,storage-accounts,scene7,aprimo,eventhublegacy,sql-asset-db,attributes,syndigoapi,elastic,ldap
+        profiles: ""

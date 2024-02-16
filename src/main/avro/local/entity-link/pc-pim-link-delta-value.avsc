@@ -1,0 +1,57 @@
+{
+  "type": "record",
+  "name": "EntityLink",
+  "namespace": "com.dcsg.pc.eventing.schema.link",
+  "fields": [
+    {
+      "name": "eventId",
+      "type": "string"
+    },
+    {
+      "name": "ecode",
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": "null"
+    },
+    {
+      "name": "styleCode",
+      "type": "string"
+    },
+    {
+      "name": "skuNumber",
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": "null"
+    },
+    {
+      "name": "linkType",
+      "type": {
+        "type": "enum",
+        "name": "EntityLinkType",
+        "symbols": [
+          "SkuToStyleLink",
+          "StyleToEcodeLink"
+        ]
+      }
+    },
+    {
+      "name": "linkAction",
+      "type": "com.dcsg.pc.eventing.schema.common.EntityLinkAction"
+    },
+    {
+      "name": "createdBy",
+      "type": "string"
+    },
+    {
+      "name": "createdOn",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    }
+  ]
+}

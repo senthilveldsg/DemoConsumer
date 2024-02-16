@@ -1,0 +1,38 @@
+{
+  "type": "record",
+  "name": "SkuAttribute",
+  "namespace": "com.dcsg.pc.eventing.schema.sku",
+  "fields": [
+    {
+      "name": "eventId",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "skuNumber",
+      "type": "string"
+    },
+    {
+      "name": "attribute",
+      "type": "com.dcsg.pc.eventing.schema.common.Attribute"
+    },
+    {
+      "name": "attributionAction",
+      "type": "com.dcsg.pc.eventing.schema.common.AttributeAction"
+    },
+    {
+      "name": "createdBy",
+      "type": "string"
+    },
+    {
+      "name": "createdOn",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    }
+  ]
+}

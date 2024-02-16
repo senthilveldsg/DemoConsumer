@@ -1,0 +1,22 @@
+[
+  {
+    "name": "com.dcsg.pc.eventing.schema.common.Attribute",
+    "subject": "pc-pim-attribute-v1-value",
+    "version": 1
+  },
+  {
+    "name": "com.dcsg.pc.eventing.schema.common.AttributeAction",
+    "subject": "pc-pim-attribute-action-v1-value",
+    "version": 1
+  },
+  {
+    "name": "com.dcsg.pc.eventing.schema.common.EntityLinkAction",
+    "subject": "pc-pim-link-action-v1-value",
+    "version": 1
+  },
+  {
+    "name": "com.dcsg.pc.eventing.schema.common.RecordStatus",
+    "subject": "pc-pim-record-status-v1-value",
+    "version": 1
+  }
+]

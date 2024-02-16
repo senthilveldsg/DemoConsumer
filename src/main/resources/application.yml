@@ -1,0 +1,23 @@
+
+
+
+# Kafka
+spring.kafka.bootstrap-servers: ${bootstrap_servers}
+#spring.kafka.properties.client.id: pc-eventing
+spring.kafka.properties.ssl.endpoint.identification.algorithm: https
+spring.kafka.properties.sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${confluent-api-username}" password="${confluent-api-password}";
+spring.kafka.properties.sasl.mechanism: PLAIN
+spring.kafka.properties.security.protocol: SASL_SSL
+spring.kafka.properties.schema.registry.url: ${schema_registry_url}
+spring.kafka.properties.basic.auth.credentials.source: USER_INFO
+spring.kafka.properties.basic.auth.user.info: ${schema_registry_user}:${schema_registry_password}
+spring.kafka.properties.use.latest.version: true
+spring.kafka.properties.latest.compatibility.strict: false
+#spring.kafka.consumer.value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+#spring.kafka.consumer.properties.spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+# Kafka Topic Names
+kafka.topic.sku-delta: pc-pim-dev-sku-delta-v1
+
+#Kafka Group Id
+kafka.relationship.group.id: pc-local-eventing-middleware-delta
+kafka.listener.concurrency.relationshipconsumer: 4

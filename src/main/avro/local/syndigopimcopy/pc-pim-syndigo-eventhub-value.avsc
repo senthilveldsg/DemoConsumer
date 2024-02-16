@@ -1,0 +1,187 @@
+{
+  "type": "record",
+  "name": "EventMessage",
+  "namespace": "com.dcsg.pc.eventing.schema.syndigopimcopy",
+  "fields": [
+    {
+      "name": "id",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "type",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "data",
+      "type": {
+        "type": "record",
+        "name": "EventMessageData",
+        "fields": [
+          {
+            "name": "attributes",
+            "type": [
+              "null",
+              {
+                "type": "map",
+                "values": {
+                  "type": "record",
+                  "name": "DataValues",
+                  "fields": [
+                    {
+                      "name": "group",
+                      "type": [
+                        "null",
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "record",
+                            "name": "Group",
+                            "fields": [
+                              {
+                                "name": "valuesMap",
+                                "type": {
+                                  "type": "map",
+                                  "values": "DataValues"
+                                }
+                              }
+                            ]
+                          },
+                          "java-class": "java.util.List"
+                        }
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "values",
+                      "type": [
+                        "null",
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "record",
+                            "name": "AttributeValue",
+                            "fields": [
+                              {
+                                "name": "value",
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          "java-class": "java.util.List"
+                        }
+                      ],
+                      "default": null
+                    }
+                  ]
+                }
+              }
+            ],
+            "default": null
+          },
+          {
+            "name": "relationships",
+            "type": [
+              "null",
+              {
+                "type": "map",
+                "values": {
+                  "type": "array",
+                  "items": {
+                    "type": "record",
+                    "name": "RelationshipLink",
+                    "fields": [
+                      {
+                        "name": "attributes",
+                        "type": [
+                          "null",
+                          {
+                            "type": "map",
+                            "values": "DataValues"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "relTo",
+                        "type": {
+                          "type": "record",
+                          "name": "Link",
+                          "fields": [
+                            {
+                              "name": "data",
+                              "type": [
+                                "null",
+                                {
+                                  "type": "record",
+                                  "name": "RelationshipData",
+                                  "fields": [
+                                    {
+                                      "name": "attributes",
+                                      "type": {
+                                        "type": "map",
+                                        "values": "DataValues"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ],
+                              "default": null
+                            },
+                            {
+                              "name": "id",
+                              "type": "string"
+                            },
+                            {
+                              "name": "type",
+                              "type": "string"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "java-class": "java.util.List"
+                }
+              }
+            ],
+            "default": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "properties",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "EventMessageProperties",
+          "fields": [
+            {
+              "name": "createdBy",
+              "type": "string"
+            },
+            {
+              "name": "createdDate",
+              "type": "string"
+            },
+            {
+              "name": "modifiedBy",
+              "type": "string"
+            },
+            {
+              "name": "modifiedDate",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "type": "record",
+  "name": "Attribute",
+  "namespace": "com.dcsg.pc.eventing.schema.common",
+  "fields": [
+    {
+      "name": "name",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "enterpriseId",
+      "type": [
+        "null",
+        "long"
+      ],
+      "default": null
+    },
+    {
+      "name": "values",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    {
+      "name": "variant",
+      "type": [
+        "null",
+        "boolean"
+      ],
+      "default": null
+    },
+    {
+      "name": "nestedAttributes",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "name": "nestedAttributeRecord",
+              "type": "com.dcsg.pc.eventing.schema.common.Attribute"
+            }
+          }
+        }
+      ],
+      "default": null
+    }
+  ]
+}

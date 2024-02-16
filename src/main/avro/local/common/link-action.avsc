@@ -1,0 +1,9 @@
+{
+  "namespace": "com.dcsg.pc.eventing.schema.common",
+  "name": "EntityLinkAction",
+  "type": "enum",
+  "symbols": [
+    "ADD",
+    "DELETE"
+  ]
+}

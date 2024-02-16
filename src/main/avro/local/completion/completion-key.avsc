@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "CompletionKey",
+  "namespace": "com.dcsg.pc.eventing.schema.completion",
+  "fields": [
+    {
+      "name": "messageId",
+      "type": "string"
+    }
+  ]
+}
