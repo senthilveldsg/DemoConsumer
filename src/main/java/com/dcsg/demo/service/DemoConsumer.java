@@ -17,21 +17,26 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Component
 @Slf4j
-public class TestConsumer {
+public class DemoConsumer {
 
     private final BackfillPublisher backfillPublisher;
 
 
     @Autowired
-    public TestConsumer(BackfillPublisher backfillPublisher) {
+    public DemoConsumer(BackfillPublisher backfillPublisher) {
         this.backfillPublisher = backfillPublisher;
     }
 
-    @KafkaListener(topics = "${kafka.topic.sku-delta}", groupId = "${kafka.relationship.group.id}", concurrency = "${kafka.listener.concurrency.relationshipconsumer}")
+    @KafkaListener(topics = "${kafka.topic.sku-delta}", groupId = "${kafka.backfilldemo.group.id}", concurrency = "${kafka.listener.concurrency.backfilldemoconsumer}")
     public void consumeSkuRelationship(ConsumerRecord<String, SkuAttribute> deltaMsg,
                                        Acknowledgment acknowledgment) {
         SkuAttribute deltaMessage = deltaMsg.value();
-        backfillPublisher.publish(deltaMessage);
+        try {
+            log.info(deltaMessage.toString());
+            backfillPublisher.publish(deltaMessage);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+        }
         acknowledgment.acknowledge();
     }
 

@@ -1,6 +1,3 @@
-
-
-
 # Kafka
 spring.kafka.bootstrap-servers: ${bootstrap_servers}
 #spring.kafka.properties.client.id: pc-eventing
@@ -16,13 +13,13 @@ spring.kafka.properties.latest.compatibility.strict: false
 #spring.kafka.consumer.value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
 #spring.kafka.consumer.properties.spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
 # Kafka Topic Names
-kafka.topic.sku-delta: pc-pim-dev-sku-delta-v1
+kafka.topic.sku-delta: pc-pim-sku-delta-v1
 
 #Kafka Group Id
-kafka.relationship.group.id: pc-local-eventing-middleware-delta-sv1
-kafka.listener.concurrency.relationshipconsumer: 4
+kafka.backfilldemo.group.id: pc-pim-backfill-demo
+kafka.listener.concurrency.backfilldemoconsumer: 6
 
 #backfill
 backfill:
   post:
-    url: https://
+    url: https://pc-mdm-backfill-consumers-dev.apps.an01.pcf.dcsg.com/api/skudeltas/submit
