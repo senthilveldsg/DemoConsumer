@@ -1,0 +1,13 @@
+applications:
+  - name: pc-backfill-publisher-dev
+    buildpacks:
+      - java_buildpack_offline
+    path: ../target/demo-0.0.1-SNAPSHOT.jar
+    memory: 1G
+    instances: 2
+    env:
+      SPRING_PROFILES_ACTIVE: dev
+      JBP_CONFIG_OPEN_JDK_JRE: '{ "jre": { version: 17.+ } }'
+      JAVA_OPTS: '-Duser.timezone=EST -XX:+UseG1GC -XX:MaxHeapFreeRatio=50 -XX:MinHeapFreeRatio=20'
+    routes:
+      - route: pc-backfill-publisher-dev.apps.an01.pcf.dcsg.com
